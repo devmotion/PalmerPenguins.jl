@@ -1,11 +1,12 @@
-# PalmerPenguins.jl <a href='https://allisonhorst.github.io/palmerpenguins'><img src='man/figures/logo.png' align="right" height="138.5" /></a>
+# PalmerPenguins.jl <a href='https://allisonhorst.github.io/palmerpenguins'><img src='https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png' align="right" height="138.5" /></a>
 
 [![Build Status](https://github.com/devmotion/PalmerPenguins.jl/workflows/CI/badge.svg)](https://github.com/devmotion/PalmerPenguins.jl/actions)
 [![Build Status](https://travis-ci.com/devmotion/PalmerPenguins.jl.svg?branch=master)](https://travis-ci.com/devmotion/PalmerPenguins.jl)
 [![Coverage](https://codecov.io/gh/devmotion/PalmerPenguins.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/devmotion/PalmerPenguins.jl)
 [![Coverage](https://coveralls.io/repos/github/devmotion/PalmerPenguins.jl/badge.svg?branch=master)](https://coveralls.io/github/devmotion/PalmerPenguins.jl?branch=master)
 
-Load the [Palmer penguins dataset](https://allisonhorst.github.io/palmerpenguins/) in Julia.
+Load the [Palmer penguins dataset](https://allisonhorst.github.io/palmerpenguins/), an
+alternative to the Iris dataset, in Julia.
 
 ## Overview
 
@@ -34,7 +35,7 @@ More information about the dataset is available in
 
 The dataset can be loaded by
 
-```julia-repl
+```julia
 julia> using PalmerPenguins
 
 julia> table = PalmerPenguins.load()
@@ -49,7 +50,7 @@ converted to a
 [`DataFrame`](https://juliadata.github.io/DataFrames.jl/stable/man/getting_started/#The-DataFrame-Type-1)
 by executing
 
-```julia-repl
+```julia
 julia> using DataFrames
 
 julia> df = DataFrame(table)
