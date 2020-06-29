@@ -54,8 +54,8 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
         @test eltype(df[!, :island]) === String
         @test eltype(df[!, :bill_length_mm]) === Union{Missing,Float64}
         @test eltype(df[!, :bill_depth_mm]) === Union{Missing,Float64}
-        @test eltype(df[!, :flipper_length_mm]) === Union{Missing,Int}
-        @test eltype(df[!, :body_mass_g]) === Union{Missing,Int}
+        @test eltype(df[!, :flipper_length_mm]) === Union{Missing,Int64}
+        @test eltype(df[!, :body_mass_g]) === Union{Missing,Int64}
         @test eltype(df[!, :sex]) === Union{Missing,String}
 
         # Check first row
