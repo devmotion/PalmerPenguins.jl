@@ -33,15 +33,14 @@ More information about the dataset is available in
 
 ## Usage
 
-The dataset can be loaded by
-
+The simplified version of the raw data can be loaded by
 ```julia
 julia> using PalmerPenguins
 
 julia> table = PalmerPenguins.load()
 ```
-
-This will download the dataset once using [DataDeps.jl](https://github.com/oxinabox/DataDeps.jl),
+This will download the data (both the simplified and the raw version) once using
+[DataDeps.jl](https://github.com/oxinabox/DataDeps.jl),
 displaying the information above and making it available for future use. The function
 `PalmerPenguins.load()` returns a
 [`CSV.File`](https://juliadata.github.io/CSV.jl/stable/#CSV.File) object that supports the
@@ -49,12 +48,17 @@ displaying the information above and making it available for future use. The fun
 converted to a
 [`DataFrame`](https://juliadata.github.io/DataFrames.jl/stable/man/getting_started/#The-DataFrame-Type-1)
 by executing
-
 ```julia
 julia> using DataFrames
 
-julia> df = DataFrame(table)
+julia> df = DataFrame(table; copycols = false) # or: df = DataFrame!(table)
 ```
+
+The raw data can be loaded with
+```julia
+julia> tableraw = PalmerPenguins.load(; raw = true)
+```
+If `raw = false` (the default), then the simplified version is returned.
 
 ## Bibliography
 
