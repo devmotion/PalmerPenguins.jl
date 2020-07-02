@@ -4,8 +4,8 @@ import CSV
 import DataDeps
 
 const DEPNAME = "PalmerPenguins"
-const LINK = "https://cdn.jsdelivr.net/gh/allisonhorst/palmerpenguins@f13c212d42c1341167368dc225df191c5a6029b9/data-raw/"
-const DATA = "penguins.csv"
+const LINK = "https://cdn.jsdelivr.net/gh/allisonhorst/palmerpenguins@433439c8b013eff3d36c847bb7a27fa0d7e353d8/inst/extdata/"
+const DATA = ["penguins.csv", "penguins_raw.csv"]
 const INFO =
 """
 Dataset: The Palmer penguins dataset
@@ -14,7 +14,7 @@ Website: https://allisonhorst.github.io/palmerpenguins/index.html
 
 The Palmer penguins dataset is a dataset for data exploration & visualization, as an
 alternative to the Iris dataset.
-        
+
 The dataset contains data for 344 penguins. There are 3 different species of penguins in
 this dataset, collected from 3 islands in the Palmer Archipelago, Antarctica.
 
@@ -36,17 +36,35 @@ Please include this citation if you plan to use this database:
     e90081. https://doi.org/10.1371/journal.pone.0090081
 """
 
-function load()
-    file = DataDeps.@datadep_str DEPNAME * "/" * DATA
-    return CSV.File(file; missingstring="NA")
+"""
+    load([; raw = false])
+
+Load the Palmer penguins dataset.
+
+If `raw` is `true`, then the raw data is returned. Otherwise the simplified version of
+the data is loaded.
+
+# References
+
+[Gorman et al., 2014]
+    Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental
+    Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3):
+    e90081. https://doi.org/10.1371/journal.pone.0090081
+"""
+function load(; raw::Bool = false)
+    file = DataDeps.@datadep_str DEPNAME * "/" * DATA[1 + Int(raw)]
+    return CSV.File(
+        file;
+        missingstring="NA", truestrings=["Yes"], falsestrings=["No"], dateformat="y-m-d",
+    )
 end
 
 function __init__()
     DataDeps.register(DataDeps.DataDep(
         DEPNAME,
         INFO,
-        LINK * DATA,
-        "97d467baa3522040aa892fa7f2ff57b5195be5fef3cceca3f78a6b1a6e32d7a2",
+        LINK .* DATA,
+        "839b058be09b164f7dfa0d030a959cb3c5426dea281e8a34d34c557e398bd01f",
     ))
 end
 
