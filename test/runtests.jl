@@ -29,7 +29,15 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
         Union{Missing,Int64},
         Union{Missing,String},
     ]
-    firstrow_simplified = ["Adelie", "Torgersen", 39.1, 18.7, 181, 3750, "male"]
+    firstrow_simplified = [
+        "Adelie",
+        "Torgersen",
+        39.1,
+        18.7,
+        Int64(181),
+        Int64(3750),
+        "male"
+    ]
 
     colnames_raw = [
         "studyName",
@@ -52,7 +60,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
     ]
     coleltypes_raw = [
         String,
-        Int,
+        Int64,
         String,
         String,
         String,
@@ -70,7 +78,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
     ]
     firstrow_raw = [
         "PAL0708",
-        1,
+        Int64(1),
         "Adelie Penguin (Pygoscelis adeliae)",
         "Anvers",
         "Torgersen",
@@ -80,8 +88,8 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
         Date(2007, 11, 11),
         39.1,
         18.7,
-        181,
-        3750,
+        Int64(181),
+        Int64(3750),
         "MALE",
         missing,
         missing,
