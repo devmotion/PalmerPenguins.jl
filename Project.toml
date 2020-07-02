@@ -1,7 +1,7 @@
 name = "PalmerPenguins"
 uuid = "8b842266-38fa-440a-9b57-31493939ab85"
 authors = ["David Widmann <dev+git@devmotion.de>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
