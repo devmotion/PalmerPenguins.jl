@@ -50,7 +50,7 @@ by executing
 ```julia
 julia> using DataFrames
 
-julia> df = DataFrame(table; copycols = false) # or: df = DataFrame!(table)
+julia> df = DataFrame(table)
 ```
 
 The raw data can be loaded with
