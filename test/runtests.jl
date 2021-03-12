@@ -140,8 +140,8 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
 
     @testset "DataFrames" begin
         @testset "simplified" begin
-            df = DataFrame!(PalmerPenguins.load())
-            df2 = DataFrame!(PalmerPenguins.load(; raw = false))
+            df = DataFrame(PalmerPenguins.load())
+            df2 = DataFrame(PalmerPenguins.load(; raw = false))
             for i in 1:size(df, 2)
                 @test all(df[!, i] .=== df2[!, i])
             end
@@ -162,7 +162,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
         end
 
         @testset "raw" begin
-            df = DataFrame!(PalmerPenguins.load(; raw = true))
+            df = DataFrame(PalmerPenguins.load(; raw = true))
 
             # Check some properties
             @test df isa DataFrame
