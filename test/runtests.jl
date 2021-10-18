@@ -30,13 +30,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
         Union{Missing,String},
     ]
     firstrow_simplified = [
-        "Adelie",
-        "Torgersen",
-        39.1,
-        18.7,
-        Int64(181),
-        Int64(3750),
-        "male"
+        "Adelie", "Torgersen", 39.1, 18.7, Int64(181), Int64(3750), "male"
     ]
 
     colnames_raw = [
@@ -99,7 +93,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
     @testset "load" begin
         @testset "simplified" begin
             table = PalmerPenguins.load()
-            table2 = PalmerPenguins.load(; raw = false)
+            table2 = PalmerPenguins.load(; raw=false)
             for i in 1:length(table)
                 @test all(table[i] .=== table2[i])
             end
@@ -120,7 +114,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
         end
 
         @testset "raw" begin
-            table = PalmerPenguins.load(; raw = true)
+            table = PalmerPenguins.load(; raw=true)
 
             # Check some properties
             @test table isa CSV.File
@@ -141,7 +135,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
     @testset "DataFrames" begin
         @testset "simplified" begin
             df = DataFrame(PalmerPenguins.load())
-            df2 = DataFrame(PalmerPenguins.load(; raw = false))
+            df2 = DataFrame(PalmerPenguins.load(; raw=false))
             for i in 1:size(df, 2)
                 @test all(df[!, i] .=== df2[!, i])
             end
@@ -162,7 +156,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
         end
 
         @testset "raw" begin
-            df = DataFrame(PalmerPenguins.load(; raw = true))
+            df = DataFrame(PalmerPenguins.load(; raw=true))
 
             # Check some properties
             @test df isa DataFrame
