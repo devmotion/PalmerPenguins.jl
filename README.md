@@ -1,8 +1,9 @@
 # PalmerPenguins.jl <a href='https://allisonhorst.github.io/palmerpenguins'><img src='https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png' align="right" height="138.5" /></a>
 
-[![Build Status](https://github.com/devmotion/PalmerPenguins.jl/workflows/CI/badge.svg)](https://github.com/devmotion/PalmerPenguins.jl/actions?query=workflow%3ACI+branch%3Amaster)
-[![Coverage](https://codecov.io/gh/devmotion/PalmerPenguins.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/devmotion/PalmerPenguins.jl)
-[![Coverage](https://coveralls.io/repos/github/devmotion/PalmerPenguins.jl/badge.svg?branch=master)](https://coveralls.io/github/devmotion/PalmerPenguins.jl?branch=master)
+[![Build Status](https://github.com/devmotion/PalmerPenguins.jl/workflows/CI/badge.svg?branch=main)](https://github.com/devmotion/PalmerPenguins.jl/actions?query=workflow%3ACI+branch%3Amain)
+[![Coverage](https://codecov.io/gh/devmotion/PalmerPenguins.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/devmotion/PalmerPenguins.jl)
+[![Coverage](https://coveralls.io/repos/github/devmotion/PalmerPenguins.jl/badge.svg?branch=main)](https://coveralls.io/github/devmotion/PalmerPenguins.jl?branch=main)
+[![Code Style: Blue](https://img.shields.io/badge/code%20style-blue-4495d1.svg)](https://github.com/invenia/BlueStyle)
 
 Load the [Palmer penguins dataset](https://allisonhorst.github.io/palmerpenguins/), an
 alternative to the Iris dataset, in Julia.
@@ -59,7 +60,7 @@ julia> tableraw = PalmerPenguins.load(; raw = true)
 ```
 If `raw = false` (the default), then the simplified version is returned.
 
-## Bibliography
+## References
 
 Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental
 Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3):
