@@ -29,9 +29,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
         Union{Missing,Int},
         Union{Missing,String},
     ]
-    firstrow_simplified = [
-        "Adelie", "Torgersen", 39.1, 18.7, 181, 3750, "male"
-    ]
+    firstrow_simplified = ["Adelie", "Torgersen", 39.1, 18.7, 181, 3750, "male"]
 
     colnames_raw = [
         "studyName",
@@ -109,7 +107,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
             # Check first row
             firstrow = first(table)
             for i in 1:length(firstrow)
-                @test firstrow[i] === firstrow_simplified[i]
+                @test firstrow[i] == firstrow_simplified[i]
             end
         end
 
@@ -127,7 +125,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
             # Check first row
             firstrow = first(table)
             for i in 1:length(firstrow)
-                @test firstrow[i] === firstrow_raw[i]
+                @test firstrow[i] == firstrow_raw[i]
             end
         end
     end
@@ -151,7 +149,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
             # Check first row
             firstrow = df[1, :]
             for i in 1:length(firstrow)
-                @test firstrow[i] === firstrow_simplified[i]
+                @test firstrow[i] == firstrow_simplified[i]
             end
         end
 
@@ -169,7 +167,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
             # Check first row
             firstrow = df[1, :]
             for i in 1:length(firstrow)
-                @test firstrow[i] === firstrow_raw[i]
+                @test firstrow[i] == firstrow_raw[i]
             end
         end
     end
