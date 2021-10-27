@@ -107,7 +107,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
             # Check first row
             firstrow = first(table)
             for i in 1:length(firstrow)
-                @test firstrow[i] == firstrow_simplified[i]
+                @test isequal(firstrow[i], firstrow_simplified[i])
             end
         end
 
@@ -125,7 +125,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
             # Check first row
             firstrow = first(table)
             for i in 1:length(firstrow)
-                @test firstrow[i] == firstrow_raw[i]
+                @test isequal(firstrow[i], firstrow_raw[i])
             end
         end
     end
@@ -149,7 +149,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
             # Check first row
             firstrow = df[1, :]
             for i in 1:length(firstrow)
-                @test firstrow[i] == firstrow_simplified[i]
+                @test isequal(firstrow[i], firstrow_simplified[i])
             end
         end
 
@@ -167,7 +167,7 @@ ENV["DATADEPS_ALWAYS_ACCEPT"] = true
             # Check first row
             firstrow = df[1, :]
             for i in 1:length(firstrow)
-                @test firstrow[i] == firstrow_raw[i]
+                @test isequal(firstrow[i], firstrow_raw[i])
             end
         end
     end
